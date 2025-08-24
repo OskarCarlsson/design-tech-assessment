@@ -1,22 +1,25 @@
 // this is a stand-in for externally managed icons
 
-import ErrorIcon from "./icons/error.svg?react";
+interface IconProps {
+  iconType : string;
+}
 
-const iconsMap = {
-  error: ErrorIcon,
-};
+const icons = [
+  'checkCircle',
+  'favorite',
+  'info',
+  'star',
+];
 
-const Icon = ({ variant }) => {
-  const IconComponent = iconsMap[variant];
-
-  if (!IconComponent) {
-    console.error(`Error: no icon found for "${variant}"`);
+const Icon = ({ iconType } : IconProps) => {
+  if (!icons.includes(iconType)) {
+    console.error(`Error: no icon found for "${iconType}"`);
     return null;
   }
 
   return (
     <div className="badge-icon">
-      <IconComponent />
+      <img src={`icons/${iconType}.svg`} />
     </div>
   );
 };

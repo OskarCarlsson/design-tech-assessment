@@ -1,10 +1,10 @@
 import "./Badge.css";
-import Icon from "./Icon.tsx"; // this is a stand-in for externally managed icons
+import Icon from "./Icon"; // this is a stand-in for externally managed icons
 
 interface BadgeProps {
   label: string;
   style?: "filled" | "outlined";
-  icon?: string;
+  icon?: "none" | "checkCircle" | "favorite" | "info" | "star"; // limited to 4 for demonstration purposes
   size?: "small" | "medium" | "large";
   variant?:
     | "default"
@@ -18,7 +18,7 @@ interface BadgeProps {
 const Badge = ({
   label,
   style = "filled",
-  icon,
+  icon = "none",
   size = "medium",
   variant = "default",
 }: BadgeProps) => {
@@ -26,7 +26,7 @@ const Badge = ({
     <div
       className={`badge-root badge-root-${style} badge-root-${size} badge-root-${variant}`}
     >
-      {/* <Icon variant={icon} /> */}
+      <Icon iconType={icon} />
       <div className="badge-label">{label}</div>
     </div>
   );

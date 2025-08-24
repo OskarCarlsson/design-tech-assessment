@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Badge from './Badge';
+import Badge from "./Badge";
 
 const meta = {
   component: Badge,
@@ -14,8 +14,8 @@ export const Default: Story = {
   args: {
     label: "Lorem ipsum",
     style: "filled",
-    icon: "error",
+    icon: "info",
     size: "medium",
-    variant: "default"
-  }
+    variant: "default",
+  },
 };

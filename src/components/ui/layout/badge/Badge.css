@@ -1,0 +1,119 @@
+/* GLOBAL STYLES - SHOULD BE INTEGRATED INTO THEME */
+
+:root {
+  --grey100: #f9f9f9;
+  --grey200: #f0f0f0;
+  --grey700: #777777;
+  --grey800: #1c1b1f;
+  --error200: #ffe6e6;
+  --error800: #b30000;
+  --warning200: #ffffc0;
+  --warning800: #806500;
+  --success200: #e7fff2;
+  --success800: #008039;
+  --highlight200: #f7ebff;
+  --highlight800: #8800f0;
+}
+
+/* END GLOBAL STYLES */
+
+.badge-root {
+  width: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  transition: all 0.2s;
+
+  color: var(--grey800);
+  background-color: var(--grey200);
+
+  &.badge-root-error {
+    color: var(--error800);
+    background-color: var(--error200);
+  }
+
+  &.badge-root-warning {
+    color: var(--warning800);
+    background-color: var(--warning200);
+  }
+
+  &.badge-root-success {
+    color: var(--success800);
+    background-color: var(--success200);
+  }
+
+  &.badge-root-highlight {
+    color: var(--highlight800);
+    background-color: var(--highlight200);
+  }
+
+  min-height: 28px;
+  padding: 4px 12px;
+  gap: 6px;
+
+  /* &.badge-root-with-icon {
+    padding-left: 6px;
+  } */
+
+  &.badge-root-small {
+    min-height: 21px;
+    padding: 3px 9px;
+    gap: 4.5px;
+
+    & .badge-icon {
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      min-height: 15px;
+      margin-left: -4.5px;
+    }
+    & .badge-label {
+      font-size: 12px;
+    }
+  }
+
+  &.badge-root-large {
+    min-height: 35px;
+    padding: 5px 15px;
+    gap: 7.5px;
+
+    & .badge-icon {
+      width: 25px;
+      height: 25px;
+      min-width: 25px;
+      min-height: 25px;
+      margin-left: -7.5px;
+    }
+    & .badge-label {
+      font-size: 20px;
+    }
+  }
+
+  &.badge-root-outlined {
+    background-color: transparent;
+    border: 1px solid;
+  }
+}
+
+.badge-icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  margin-left: -6px;
+  transition: all 0.2s;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.badge-label {
+  font-family: "Satoshi Variable", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  transition: all 0.2s;
+}
